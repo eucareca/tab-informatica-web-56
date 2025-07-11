@@ -1,5 +1,5 @@
 
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Send, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -14,14 +14,42 @@ export const Contact = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    toast({
-      title: "Mensagem enviada!",
-      description: "Entraremos em contato em breve.",
-    });
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    
+    try {
+      // Enviar email usando formsubmit.co
+      const response = await fetch('https://formsubmit.co/tiagoassisbrasil@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          _subject: 'Nova mensagem do site TAB Informática',
+          _captcha: 'false'
+        })
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Mensagem enviada!",
+          description: "Entraremos em contato em breve.",
+        });
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        throw new Error('Erro ao enviar mensagem');
+      }
+    } catch (error) {
+      toast({
+        title: "Erro ao enviar mensagem",
+        description: "Tente novamente ou entre em contato pelo WhatsApp.",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -91,6 +119,23 @@ export const Contact = () => {
                     <p className="text-gray-600">Segunda a Sexta: 8h às 18h</p>
                   </div>
                 </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                    <MessageCircle className="h-6 w-6 text-green-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">WhatsApp</h4>
+                    <a 
+                      href="https://wa.me/5555992056000" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-gray-600 hover:text-green-600 transition-colors"
+                    >
+                      (55) 99205-6000
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -99,6 +144,14 @@ export const Contact = () => {
                 Redes Sociais
               </h3>
               <div className="flex space-x-4">
+                <a 
+                  href="https://wa.me/5555992056000" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-green-600 hover:bg-green-700 rounded-xl flex items-center justify-center transition-colors"
+                >
+                  <MessageCircle className="h-6 w-6 text-white" />
+                </a>
                 <a 
                   href="https://www.facebook.com/tabinformatica" 
                   target="_blank" 

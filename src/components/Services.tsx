@@ -16,7 +16,7 @@ export const Services = () => {
     {
       icon: Server,
       title: "Administração de Servidores",
-      description: "Windows Server, Active Directory, Linux (Ubuntu, CentOS), Apache, Samba, MySQL"
+      description: "Windows Server, Active Directory, Linux (Ubuntu, CentOS), Samba, MySQL"
     },
     {
       icon: Shield,
@@ -26,7 +26,7 @@ export const Services = () => {
     {
       icon: Cloud,
       title: "Computação em Nuvem",
-      description: "AWS, Microsoft Azure, GCP, Docker, ambientes multicloud e migração"
+      description: "Cloud, GCP, Docker, ambientes multicloud e migração"
     },
     {
       icon: Network,
@@ -65,12 +65,9 @@ export const Services = () => {
     "Linux",
     "VMware", 
     "Docker",
-    "AWS",
-    "Microsoft Azure",
+    "Cloud",
     "Microsoft Office 365",
-    "MySQL",
-    "Apache",
-    "WordPress"
+    "MySQL"
   ];
 
   return (
