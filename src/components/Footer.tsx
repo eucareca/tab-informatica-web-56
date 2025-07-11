@@ -1,5 +1,5 @@
 
-import { Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -22,6 +22,14 @@ export const Footer = () => {
               suporte técnico e computação em nuvem.
             </p>
             <div className="flex space-x-4">
+              <a 
+                href="https://wa.me/5555992056000" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gray-800 hover:bg-green-600 rounded-lg flex items-center justify-center transition-colors"
+              >
+                <MessageCircle className="h-5 w-5" />
+              </a>
               <a 
                 href="https://www.facebook.com/tabinformatica" 
                 target="_blank" 
@@ -61,11 +69,6 @@ export const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#certificacoes" className="text-gray-300 hover:text-green-400 transition-colors">
-                  Certificações
-                </a>
-              </li>
-              <li>
                 <a href="#contato" className="text-gray-300 hover:text-green-400 transition-colors">
                   Contato
                 </a>
@@ -80,6 +83,17 @@ export const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-green-400" />
                 <span className="text-gray-300">(55) 99205-6000</span>
+              </div>
+              <div className="flex items-center space-x-3">
+                <MessageCircle className="h-5 w-5 text-green-400" />
+                <a 
+                  href="https://wa.me/5555992056000" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-gray-300 hover:text-green-400 transition-colors"
+                >
+                  WhatsApp: (55) 99205-6000
+                </a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-green-400" />
