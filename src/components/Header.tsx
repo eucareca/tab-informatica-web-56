@@ -21,11 +21,11 @@ export const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center">
             <img 
               src="/lovable-uploads/1e12027c-4a72-487a-b26b-262e42674a68.png" 
               alt="TAB Informática" 
-              className="h-10 w-auto"
+              className="h-8 w-auto"
             />
           </div>
 

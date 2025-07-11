@@ -1,5 +1,5 @@
 
-import { User, MapPin, Phone, Mail, GraduationCap } from "lucide-react";
+import { User, MapPin, Phone, Mail } from "lucide-react";
 
 export const About = () => {
   return (
@@ -39,26 +39,6 @@ export const About = () => {
               </div>
             </div>
 
-            <div className="bg-green-50 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <GraduationCap className="h-6 w-6 text-green-600 mr-3" />
-                Formação
-              </h3>
-              <div className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-gray-900">Tecnólogo em Redes de Computadores</h4>
-                  <p className="text-gray-600">Universidade Cidade de Florianópolis – UCEFF (2023)</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Pós-Graduação em Administração de Servidores</h4>
-                  <p className="text-gray-600">Em andamento</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Técnico em Processamento de Dados</h4>
-                  <p className="text-gray-600">Instituto Metodista Centenário (1999)</p>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Professional Summary */}
